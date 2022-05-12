@@ -9,7 +9,6 @@ const routerBase =
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ...routerBase,
-  // Target: https://go.nuxtjs.dev/config-target
   target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
