@@ -8,7 +8,6 @@ const routerBase =
     : {};
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
   ...routerBase,
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
@@ -66,9 +65,10 @@ export default {
   build: {},
   auth: {
     redirect: {
+      logout: "/",
       login: "/",
       callback: "/",
-      home: "profile-info",
+      home: "/profile-info/",
     },
     strategies: {
       github: {

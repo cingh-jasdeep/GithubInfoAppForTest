@@ -10,7 +10,7 @@
         items-center
         p-2
       "
-      @click="$auth.loginWith('github')"
+      @click="loginWithGithub"
     >
       <svg
         class="w-6 h-6 mr-2 fill-white"
@@ -31,5 +31,10 @@
 <script>
 export default {
   name: "IndexPage",
+  methods: {
+    loginWithGithub() {
+      this.$auth.loginWith("github");
+    },
+  },
 };
 </script>

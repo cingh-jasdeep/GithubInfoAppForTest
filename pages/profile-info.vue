@@ -13,7 +13,7 @@
         items-center
         p-2
       "
-      @click="$auth.logout()"
+      @click="logout"
     >
       Logout
     </button>
@@ -38,6 +38,11 @@
 <script>
 export default {
   middleware: "auth",
+  methods: {
+    logout() {
+      this.$auth.logout();
+    },
+  },
   data: () => {
     return {
       avatar_size: "100px",
