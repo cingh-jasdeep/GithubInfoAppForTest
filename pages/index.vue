@@ -32,8 +32,13 @@
 export default {
   name: "IndexPage",
   methods: {
-    loginWithGithub() {
-      this.$auth.loginWith("github");
+    async loginWithGithub() {
+      try {
+        let provider = new this.$fireModule.auth.GithubAuthProvider();
+        this.$fire.auth.signInWithRedirect(provider);
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };

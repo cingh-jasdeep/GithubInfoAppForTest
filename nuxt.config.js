@@ -9,6 +9,7 @@ const routerBase =
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ...routerBase,
+  ssr: false,
   target: "static",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -44,8 +45,28 @@ export default {
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
-    "@nuxtjs/auth-next",
+    "@nuxtjs/firebase",
   ],
+
+  firebase: {
+    config: {
+      apiKey: "AIzaSyASmsv48evbVfM03QIcbxiFsYAbXvDaMnw",
+      authDomain: "githubinfoappfortest.firebaseapp.com",
+      projectId: "githubinfoappfortest",
+      storageBucket: "githubinfoappfortest.appspot.com",
+      messagingSenderId: "945800677665",
+      appId: "1:945800677665:web:a185148025dad68d83d660",
+      measurementId: "G-3ET5CSV33B",
+    },
+    services: {
+      auth: {
+        initialize: {
+          onAuthStateChangedAction: "onAuthStateChangedAction",
+        },
+      },
+      analytics: true,
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -62,18 +83,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-  auth: {
-    redirect: {
-      logout: "/",
-      login: "/",
-      callback: "/",
-      home: "/profile-info/",
-    },
-    strategies: {
-      github: {
-        clientId: process.env.CLIENT_ID_GITHUB,
-        clientSecret: process.env.CLIENT_SECRET_GITHUB,
-      },
-    },
-  },
 };
