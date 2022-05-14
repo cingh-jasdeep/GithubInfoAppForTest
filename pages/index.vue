@@ -35,7 +35,7 @@ export default {
     async loginWithGithub() {
       try {
         let provider = new this.$fireModule.auth.GithubAuthProvider();
-        this.$fire.auth.signInWithRedirect(provider);
+        this.$fire.auth.signInWithPopup(provider);
       } catch (e) {
         console.log(e);
       }
