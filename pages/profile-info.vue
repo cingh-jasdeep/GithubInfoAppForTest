@@ -7,7 +7,7 @@
     <p class="text-center">
       Avatar:<br /><img
         :src="githubUser.avatar_url"
-        :class="`w-[${avatar_size}] h-[${avatar_size}]`"
+        class="w-[100px] h-[100px]"
       />
       <span class="text-xs">{{ avatar_size }} x {{ avatar_size }}</span>
     </p>
